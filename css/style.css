@@ -1,0 +1,13 @@
+#cursor {
+    border-right: 4px solid #ff0000;
+}
+
+@keyframes cursor-blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
