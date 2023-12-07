@@ -1,5 +1,14 @@
+body {
+    /* font-family: "Homemade Apple", cursive; */
+    font-family: "Outfit", sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: #fff;
+}
+
 #cursor {
-    border-right: 4px solid #ff0000;
+    border-right: 5px solid #ff0000;
 }
 
 @keyframes cursor-blink {
