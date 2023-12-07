@@ -21,6 +21,8 @@ const titleVariations = [
     "Beyond the Lines and Colors",
     "The Unbound Potential of Imagination",
 ];
+const studiesTabs = document.querySelectorAll(".study-tab");
+const studies = document.querySelectorAll(".study");
 
 // Initialize the app when the DOM content is loaded
 function init() {
@@ -77,3 +79,17 @@ function deleteTitle() {
 
 // Initialize the app when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", () => init());
+
+studiesTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+        const studyId = tab.id.replace("-button", "");
+        studies.forEach((study) => {
+            study.style.display = "none";
+        });
+        studiesTabs.forEach((tab) => {
+            tab.style.backgroundColor = "#141414";
+        });
+        document.getElementById(studyId).style.display = "block";
+        tab.style.backgroundColor = "#2b2b2b";
+    });
+});

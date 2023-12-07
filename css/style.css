@@ -1,6 +1,6 @@
 /*----------------- Global -----------------*/
 * {
-    outline: 1px solid white;
+    /* outline: 1px solid white; */
 }
 
 /*----------------- Body -----------------*/
@@ -10,14 +10,21 @@ body {
     font-family: "Outfit", sans-serif;
     padding: 0;
     margin: 0;
+    width: 100%;
     background-color: black;
     color: #fff;
     overflow-x: hidden;
 }
 
+button {
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+}
+
 /*----------------- Header -----------------*/
 
 header {
+    padding: 5px 15px;
     display: flex;
     position: fixed;
     width: 100%;
@@ -30,26 +37,28 @@ header {
 
 /*----------------- Main -----------------*/
 
-/* main {
-    
-} */
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+section h1:not(.intro-section h1) {
+    font-size: 40px;
+}
 
 .title-container {
     position: relative;
-    top: 40%;
-    left: 50%;
     font-size: 60px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    width: fit-content;
-    outline: 1px solid red;
-    margin-right: 50%;
+    outline: 3px solid red;
 }
 
 #title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* word-wrap: break-word;
     overflow-wrap: break-word;
-    box-sizing: border-box;
+    white-space: normal; */
 }
 
 #cursor {
@@ -66,7 +75,7 @@ header {
     }
 }
 
-/*----------------- Sections -----------------*/
+/*----------------- Intro Section -----------------*/
 
 .intro-section {
     padding: 15px;
@@ -74,7 +83,207 @@ header {
     max-height: 1080px;
 }
 
-/*----------------- Sections -----------------*/
+/*----------------- Studies Sections -----------------*/
+
+#studies-section {
+    padding: 15px;
+}
+
+.study-window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.studies-container {
+    background-color: #2b2b2b;
+    padding: 15px;
+}
+
+.study {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.study:not(.study:first-of-type) {
+    display: none;
+}
+
+.study h2,
+.study p {
+    margin: 0;
+}
+
+.study h2 {
+    grid-row: 1;
+    grid-column: span 2;
+}
+
+.study div:nth-child(n + 2) {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.study-tab {
+    background-color: #2b2b2b;
+    color: white;
+    padding: 10px;
+    border: 1px solid transparent;
+}
+
+.study-tab:not(.study-tab:first-of-type) {
+    background-color: #141414;
+}
+
+@media (max-width: 600px) {
+    .study div:nth-child(n + 2) {
+        grid-column: span 2;
+    }
+}
+
+/*----------------- Film Analysis Sections -----------------*/
+
+#film-analysis-section {
+    padding: 15px;
+}
+
+.film-analysis-boxes-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.film-analysis-box {
+    padding: 15px;
+    background-color: #2b2b2b;
+}
+
+@media (max-width: 1000px) {
+    .film-analysis-boxes-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .film-analysis-box:last-of-type {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .film-analysis-box {
+        grid-column: span 2;
+    }
+}
+
+/*----------------- Art Analysis Sections -----------------*/
+
+#art-analysis-section {
+    max-width: 900px;
+}
+
+#art-analysis-section h1 {
+    padding-inline: 15px;
+}
+
+.art-analysis-boxes-container {
+    padding: 15px;
+    max-width: 900px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 19rem;
+    overflow-x: auto;
+    gap: 15px;
+    overscroll-behavior-inline: contain;
+}
+
+.snap-inline {
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 15px;
+}
+
+.snap-inline * {
+    scroll-snap-align: start;
+}
+
+.art-analysis-box {
+    max-height: 500px;
+    overflow-y: scroll;
+    background-color: #2b2b2b;
+    display: grid;
+    grid-template-rows: min-content;
+    max-width: 19rem;
+    min-height: 22rem;
+}
+
+.art-analysis-box img {
+    inline-size: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.art-analysis-box h2,
+.art-analysis-box p {
+    padding: 0 15px;
+}
+
+/*----------------- Old People's Art & Simulation Sections -----------------*/
+
+#old-peoples-art-section,
+#simulation-section {
+    padding: 15px;
+}
+
+.img-with-caption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px;
+}
+
+.img-with-caption img {
+    box-sizing: border-box;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    min-width: 100px;
+    max-width: 500px;
+}
+
+.img-with-caption p {
+    max-width: 500px;
+}
+
+/*----------------- Brand Sections -----------------*/
+
+#brand-section {
+    width: 300px;
+    position: relative;
+    padding: 15px;
+    margin-bottom: 400px; /* photobanner is absolute */
+}
+
+.photobanner {
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: bannermove 20s linear infinite;
+}
+
+.photobanner img {
+    height: 300px;
+    object-fit: cover;
+    margin: 10px;
+}
+
+@keyframes bannermove {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
+/*----------------- Footer -----------------*/
 
 /* footer {
 
