@@ -1,3 +1,10 @@
+/*----------------- Global -----------------*/
+* {
+    outline: 1px solid white;
+}
+
+/*----------------- Body -----------------*/
+
 body {
     /* font-family: "Homemade Apple", cursive; */
     font-family: "Outfit", sans-serif;
@@ -5,10 +12,48 @@ body {
     margin: 0;
     background-color: black;
     color: #fff;
+    overflow-x: hidden;
+}
+
+/*----------------- Header -----------------*/
+
+header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-image: linear-gradient(#000, transparent);
+    backdrop-filter: blur(3px);
+}
+
+/*----------------- Main -----------------*/
+
+/* main {
+    
+} */
+
+.title-container {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    font-size: 60px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    width: fit-content;
+    outline: 1px solid red;
+    margin-right: 50%;
+}
+
+#title {
+    overflow-wrap: break-word;
+    box-sizing: border-box;
 }
 
 #cursor {
-    border-right: 5px solid #ff0000;
+    border-right: 10px solid #ff0000;
 }
 
 @keyframes cursor-blink {
@@ -20,3 +65,17 @@ body {
         opacity: 0;
     }
 }
+
+/*----------------- Sections -----------------*/
+
+.intro-section {
+    padding: 15px;
+    height: 100vh;
+    max-height: 1080px;
+}
+
+/*----------------- Sections -----------------*/
+
+/* footer {
+
+} */

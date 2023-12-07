@@ -1,3 +1,4 @@
+// Global variables
 const titleVariations = [
     "Beyond the Scribbles",
     "Decoding the Rainbow",
@@ -21,10 +22,12 @@ const titleVariations = [
     "The Unbound Potential of Imagination",
 ];
 
+// Initialize the app when the DOM content is loaded
 function init() {
     typeTitle();
 }
 
+// Type the title in a realistic style
 function typeTitle() {
     const randomIndex = Math.floor(Math.random() * titleVariations.length);
     const titleElement = document.getElementById("title");
@@ -35,10 +38,10 @@ function typeTitle() {
     function typeNextChar() {
         if (currentCharIndex >= characters.length) {
             cursorElement.style.animation = "cursor-blink 1s infinite";
-            setTimeout(function () {
+            setTimeout(() => {
                 cursorElement.style.animation = "none";
                 deleteTitle();
-            }, 5000); // 5 Seconds
+            }, 5000); // 5 seconds
         } else {
             const newCharacter = document.createTextNode(
                 characters[currentCharIndex]
@@ -52,12 +55,13 @@ function typeTitle() {
     typeNextChar();
 }
 
+// Delete the title
 function deleteTitle() {
     const titleElement = document.getElementById("title");
     const characters = Array.from(titleElement.childNodes);
     let currentCharIndex = characters.length - 1;
 
-    const intervalId = setInterval(function () {
+    const intervalId = setInterval(() => {
         if (currentCharIndex < 0) {
             clearInterval(intervalId);
             typeTitle();
@@ -71,4 +75,5 @@ function deleteTitle() {
     }, 30);
 }
 
-init();
+// Initialize the app when the DOM content is loaded
+document.addEventListener("DOMContentLoaded", () => init());
