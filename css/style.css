@@ -61,11 +61,18 @@ body {
 }
 
 .section {
+    position: relative;
     margin-block: 50px;
 }
 
-.section h2 {
-    position: relative;
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+section h2 {
+    font-size: 40px;
+    position: inherit;
 }
 
 button {
@@ -121,17 +128,6 @@ header {
 
 .navbar li:hover {
     transform: translateY(-4px);
-}
-
-/*----------------- Main -----------------*/
-
-main {
-    max-width: 1200px;
-    margin: auto;
-}
-
-section h2 {
-    font-size: 40px;
 }
 
 /*----------------- Intro Section -----------------*/
@@ -193,6 +189,12 @@ section h2 {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .title-container {
+        font-size: 40px;
+    }
+}
+
 /*----------------- Studies Sections -----------------*/
 
 #studies-section {
@@ -217,7 +219,7 @@ section h2 {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
-    /* column-gap: 20px; */
+    column-gap: 20px;
 }
 
 .study:not(.study:first-of-type) {
@@ -252,7 +254,34 @@ section h2 {
     backdrop-filter: blur(20px);
 }
 
-@media (max-width: 600px) {
+.study a {
+    grid-column: span 2;
+}
+
+.download-button {
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+    border-style: none;
+    cursor: pointer;
+    background-color: var(--accent-purple);
+    padding: 20px;
+    border-radius: var(--border-radius-regular);
+    box-sizing: border-box;
+    box-shadow: var(--box-shadow-main);
+    transition: all 0.2s ease-out;
+}
+
+.download-button:hover {
+    scale: 1.1;
+}
+
+.download-button:focus {
+    background-color: #5a009f;
+}
+
+@media only screen and (max-width: 768px) {
     .study div:nth-child(n + 2) {
         grid-column: span 2;
     }
@@ -288,7 +317,7 @@ section h2 {
     }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .film-analysis-box {
         grid-column: span 2;
     }
@@ -354,9 +383,10 @@ section h2 {
 }
 
 .img-with-caption {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -364,21 +394,14 @@ section h2 {
     box-sizing: border-box;
     object-fit: cover;
     aspect-ratio: 1/1;
-    max-width: 100%;
+    max-width: 500px;
     height: auto;
     min-width: 100px;
     border-radius: var(--border-radius-regular);
 }
 
 .img-with-caption p {
-    min-width: 100px;
-}
-
-@media (max-width: 600px) {
-    .img-with-caption {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
+    max-width: 500px;
 }
 
 /*----------------- Brand Sections -----------------*/

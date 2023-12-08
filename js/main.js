@@ -97,7 +97,7 @@ studiesTabs.forEach((tab) => {
         studiesTabs.forEach((tab) => {
             tab.classList.remove("pressed");
         });
-        document.getElementById(studyId).style.display = "block";
+        document.getElementById(studyId).style.display = "grid";
         tab.classList.add("pressed");
     });
 });
