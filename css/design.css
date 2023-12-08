@@ -30,3 +30,108 @@
     transform: translateY(-50px);
     opacity: 0.05;
 }
+
+#green-design {
+    position: absolute;
+    rotate: 180deg;
+    width: 100px;
+    top: -100%;
+    left: -30%;
+    z-index: -1;
+}
+
+#pink-design {
+    position: absolute;
+    top: -150%;
+    left: 0%;
+    z-index: -1;
+}
+
+#lion-design {
+    position: absolute;
+    top: -600%;
+    right: 0%;
+    z-index: -1;
+}
+
+#rainbow-design {
+    position: absolute;
+    top: -400%;
+    right: 0%;
+    z-index: -1;
+}
+
+#red-design {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    z-index: -1;
+}
+
+#dino-design {
+    position: absolute;
+    top: 0%;
+    right: -150%;
+    z-index: -1;
+}
+
+#orange-design {
+    position: absolute;
+    top: -100%;
+    right: 0%;
+    z-index: -1;
+}
+
+#simulation-orange-circle {
+    background-color: orangered;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    border-radius: 100px;
+    z-index: -1;
+    filter: blur(500px);
+}
+
+#brand-turquoise-circle {
+    background-color: turquoise;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    right: -300%;
+    border-radius: 100px;
+    z-index: -1;
+    filter: blur(500px);
+}
+
+#old-peoples-red-circle {
+    background-color: red;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    border-radius: 100px;
+    z-index: -1;
+    filter: blur(500px);
+}
+
+#film-purple-circle {
+    background-color: var(--accent-purple);
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    right: 0%;
+    border-radius: 100px;
+    z-index: -1;
+    filter: blur(500px);
+}
+
+#author-green-circle {
+    background-color: greenyellow;
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    top: -100%;
+    right: 0%;
+    border-radius: 100px;
+    z-index: -1;
+    filter: blur(200px);
+}

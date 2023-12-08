@@ -4,6 +4,7 @@
     --background-color-second: rgb(43, 43, 43);
 
     --accent-purple: #9000ff;
+    --gray-transparent: #2f2f2fe6;
 
     --border-radius-regular: 20px;
 
@@ -61,6 +62,10 @@ body {
 
 .section {
     margin-block: 50px;
+}
+
+.section h2 {
+    position: relative;
 }
 
 button {
@@ -147,6 +152,7 @@ section h2 {
 
 #title {
     position: absolute;
+    margin-top: 30px;
     max-width: 600px;
     overflow-wrap: break-word;
 }
@@ -157,6 +163,20 @@ section h2 {
     right: 0;
     font-size: 30px;
     margin: 20px;
+}
+
+.instagram-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    top: 50px;
+    font-weight: normal;
+}
+
+.instagram-link:hover,
+.instagram-link:focus {
+    text-decoration: underline;
 }
 
 #cursor {
@@ -186,7 +206,8 @@ section h2 {
 }
 
 .studies-container {
-    background-color: var(--background-color-second);
+    background-color: var(--gray-transparent);
+    backdrop-filter: blur(20px);
     padding: 20px;
     border-radius: 0 20px 20px 20px;
     box-shadow: var(--box-shadow-main);
@@ -196,6 +217,7 @@ section h2 {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
+    /* column-gap: 20px; */
 }
 
 .study:not(.study:first-of-type) {
@@ -218,15 +240,16 @@ section h2 {
 }
 
 .study-tab {
-    background-color: var(--background-color-second);
+    background-color: var(--background-color-main);
     color: white;
     padding: 10px;
     border: 1px solid transparent;
     border-radius: 20px 20px 0 0;
 }
 
-.study-tab:not(.study-tab:first-of-type) {
-    background-color: #141414;
+.study-tab.pressed {
+    background-color: var(--gray-transparent);
+    backdrop-filter: blur(20px);
 }
 
 @media (max-width: 600px) {
@@ -250,7 +273,8 @@ section h2 {
 
 .film-analysis-box {
     padding: 20px;
-    background-color: #2b2b2b;
+    background-color: var(--gray-transparent);
+    backdrop-filter: blur(20px);
     border-radius: var(--border-radius-regular);
     box-shadow: var(--box-shadow-main);
 }
@@ -301,7 +325,8 @@ section h2 {
 .art-analysis-box {
     max-height: 600px;
     overflow-y: scroll;
-    background-color: #2b2b2b;
+    background-color: var(--gray-transparent);
+    backdrop-filter: blur(20px);
     display: grid;
     grid-template-rows: min-content;
     width: 19rem;
@@ -393,8 +418,9 @@ section h2 {
 
 footer {
     width: 100%;
-    color: #888888;
-    background-color: var(--background-color-second);
+    color: #a2a0a0;
+    background-color: var(--gray-transparent);
+    backdrop-filter: blur(20px);
     display: flex;
     justify-content: center;
     align-items: center;

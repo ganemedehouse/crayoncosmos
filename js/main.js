@@ -28,6 +28,13 @@ const titleVariations = [
     "Sparkling with Creative Energy ✨",
     "Beyond the Lines and Colors 🌈",
     "The Unbound Potential of Imagination 🚀",
+    "Little Hands, Big Dreams 👐",
+    "The Colors of Childhood 🌈",
+    "A World Imagined 🌍",
+    "Where Imagination Blossoms 🌸",
+    "Echoes of Innocence 🍼",
+    "A Symphony of Crayons 🎶",
+    "Fingerprints on the Future 👣",
 ];
 
 function typeTitle() {
@@ -88,10 +95,10 @@ studiesTabs.forEach((tab) => {
             study.style.display = "none";
         });
         studiesTabs.forEach((tab) => {
-            tab.style.backgroundColor = "#141414";
+            tab.classList.remove("pressed");
         });
         document.getElementById(studyId).style.display = "block";
-        tab.style.backgroundColor = "var(--background-color-second)";
+        tab.classList.add("pressed");
     });
 });
 
