@@ -90,6 +90,33 @@ studiesTabs.forEach((tab) => {
             tab.style.backgroundColor = "#141414";
         });
         document.getElementById(studyId).style.display = "block";
-        tab.style.backgroundColor = "#2b2b2b";
+        tab.style.backgroundColor = "var(--background-color-second)";
     });
 });
+
+document.querySelectorAll(".photobanner img").forEach((img) => {
+    img.addEventListener("mouseover", () => {
+        img.style.transform = "scale(1.1)";
+        img.style.objectFit = "fill";
+    });
+
+    img.addEventListener("mouseout", () => {
+        img.style.transform = "";
+        img.style.objectFit = "cover";
+    });
+});
+
+const fadeInElements = document.querySelectorAll(".fade-in");
+
+const callback = (entries, observer) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        }
+    });
+};
+
+const observer = new IntersectionObserver(callback);
+
+fadeInElements.forEach((element) => observer.observe(element));

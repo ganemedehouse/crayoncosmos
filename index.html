@@ -6,8 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <meta name="author" content="Aysha Almamari" />
-        <meta name="theme-color" content="#fff" />
+        <meta name="theme-color" content="#9000ff" />
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/design.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,6 +29,18 @@
             name="description"
             content="Delve into the vibrant world of children's art! Crayon Cosmos showcases stunning artwork, explores its psychological significance, and shares insights from experts. Discover the creativity and imagination within every child."
         />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
     </head>
     <!-- head ends -->
 
@@ -32,48 +49,45 @@
         <!-- header starts -->
         <header>
             <img
+                class="logo"
                 src="images/crayon-cosmos-logo.png"
                 alt="Crayon Cosmos Logo"
                 width="100px"
             />
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li><a href="#studies-section">Studies</a></li>
+                    <li><a href="#film-analysis-section">Film Analysis</a></li>
+                    <li><a href="#art-analysis-section">Art Analysis</a></li>
+                    <li>
+                        <a href="#old-peoples-art-section">Old People's Art</a>
+                    </li>
+                    <li><a href="#brand-section">Brand</a></li>
+                    <li><a href="#simulation-section">Simulation</a></li>
+                </ul>
+            </nav>
+            <div id="header-purple-circle"></div>
         </header>
+
         <!-- header ends -->
 
         <!-- main starts -->
         <main>
             <div>
                 <!-- intro section starts -->
-                <section class="intro-section">
+                <section id="intro-section" class="section">
+                    <div class="unselectable" id="child-art-design">
+                        C H I L D A R T C H I L D A R T C H I L D A R T
+                    </div>
                     <div class="title-container">
                         <h1 id="title"><span id="cursor"></span></h1>
                     </div>
-                    <nav>
-                        <ul>
-                            <li><a href="#studies-section">Studies</a></li>
-                            <li>
-                                <a href="#film-analysis-section"
-                                    >Film Analysis</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#art-analysis-section">Art Analysis</a>
-                            </li>
-                            <li>
-                                <a href="#old-peoples-art-section"
-                                    >Old People's Art</a
-                                >
-                            </li>
-                            <li><a href="#brand-section">Brand</a></li>
-                            <li>
-                                <a href="#simulation-section">Simulation</a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <b id="author">Aysha Almamari</b>
                 </section>
                 <!-- intro section ends -->
 
                 <!-- studies section starts -->
-                <section id="studies-section">
+                <section id="studies-section" class="section fade-in">
                     <h1>Studies</h1>
                     <div class="study-window">
                         <div>
@@ -290,7 +304,7 @@
                 <!-- studies section ends -->
 
                 <!-- film analysis section starts -->
-                <section id="film-analysis-section">
+                <section id="film-analysis-section" class="section fade-in">
                     <h1>Film Materials Analysis</h1>
                     <div class="film-analysis-boxes-container">
                         <article class="film-analysis-box">
@@ -408,8 +422,18 @@
                 <!-- film analysis section ends -->
 
                 <!-- art analysis section starts -->
-                <section id="art-analysis-section">
-                    <h1>Child Art Analysis</h1>
+                <section id="art-analysis-section" class="section fade-in">
+                    <h1>
+                        Child Art Analysis
+                        <div
+                            id="child-art-analysis-design"
+                            class="unselectable"
+                        >
+                            Child Art Analysis <br />
+                            Child Art Analysis <br />
+                            Child Art Analysis
+                        </div>
+                    </h1>
                     <div class="art-analysis-boxes-container snap-inline">
                         <div class="art-analysis-box">
                             <img
@@ -551,7 +575,7 @@
                 <!-- art analysis section ends -->
 
                 <!-- old peoples art section starts -->
-                <section id="old-peoples-art-section">
+                <section id="old-peoples-art-section" class="section fade-in">
                     <h1>
                         Comparing Old People's Drawings With The Characteristics
                         of Children's
@@ -602,7 +626,7 @@
                 <!-- old peoples art section ends -->
 
                 <!-- brand section starts -->
-                <section id="brand-section">
+                <section id="brand-section" class="section fade-in">
                     <h1>Brand Inspired by Child Art</h1>
                     <div class="brand-images-container">
                         <div class="photobanner">
@@ -630,7 +654,7 @@
                 <!-- brand section ends -->
 
                 <!-- simulation section starts -->
-                <section id="simulation-section">
+                <section id="simulation-section" class="section fade-in">
                     <h1>Child Art Simulation</h1>
                     <div class="old-peoples-art-container img-with-caption">
                         <img
@@ -669,7 +693,11 @@
 
         <!-- footer starts -->
         <footer>
-            <h3></h3>
+            <div>
+                <b>< ></b> with
+                <i class="fa fa-heart" aria-hidden="true"></i> by
+                <b style="font-size: 24px">Ganymede House</b>
+            </div>
         </footer>
         <!-- footer ends -->
         <script src="js/main.js"></script>

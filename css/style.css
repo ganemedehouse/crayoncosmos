@@ -1,6 +1,38 @@
 /*----------------- Global -----------------*/
+:root {
+    --background-color-main: rgb(26, 26, 26);
+    --background-color-second: rgb(43, 43, 43);
+
+    --accent-purple: #9000ff;
+
+    --border-radius-regular: 15px;
+
+    --box-shadow-main: 0 5px 10px 1px rgba(0, 0, 0, 0.266);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     /* outline: 1px solid white; */
+}
+
+.unselectable {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: none;
 }
 
 /*----------------- Body -----------------*/
@@ -11,9 +43,13 @@ body {
     padding: 0;
     margin: 0;
     width: 100%;
-    background-color: black;
+    background-color: var(--background-color-main);
     color: #fff;
     overflow-x: hidden;
+}
+
+.section {
+    margin-block: 50px;
 }
 
 button {
@@ -26,13 +62,51 @@ button {
 header {
     padding: 5px 15px;
     display: flex;
+    justify-content: space-between;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 10;
-    background-image: linear-gradient(#000, transparent);
+    background-image: linear-gradient(
+        var(--background-color-main),
+        transparent
+    );
     backdrop-filter: blur(3px);
+}
+
+.logo {
+    object-fit: scale-down;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.navbar-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar li {
+    list-style: none;
+    margin-inline: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar li:hover {
+    transform: translateY(-4px);
 }
 
 /*----------------- Main -----------------*/
@@ -42,27 +116,42 @@ main {
     margin: auto;
 }
 
-section h1:not(.intro-section h1) {
+section h1:not(#intro-section h1) {
     font-size: 40px;
 }
 
+/*----------------- Intro Section -----------------*/
+
+#intro-section {
+    position: relative;
+    padding: 15px;
+    height: 85vh;
+    max-height: 1080px;
+}
+
 .title-container {
+    display: flex;
     position: relative;
     font-size: 60px;
-    outline: 3px solid red;
+    box-sizing: border-box;
 }
 
 #title {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    /* word-wrap: break-word;
+    max-width: 600px;
     overflow-wrap: break-word;
-    white-space: normal; */
+}
+
+#author {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 30px;
+    margin: 15px;
 }
 
 #cursor {
-    border-right: 10px solid #ff0000;
+    border-right: 15px solid var(--accent-purple);
 }
 
 @keyframes cursor-blink {
@@ -73,14 +162,6 @@ section h1:not(.intro-section h1) {
     50% {
         opacity: 0;
     }
-}
-
-/*----------------- Intro Section -----------------*/
-
-.intro-section {
-    padding: 15px;
-    height: 100vh;
-    max-height: 1080px;
 }
 
 /*----------------- Studies Sections -----------------*/
@@ -96,8 +177,10 @@ section h1:not(.intro-section h1) {
 }
 
 .studies-container {
-    background-color: #2b2b2b;
+    background-color: var(--background-color-second);
     padding: 15px;
+    border-radius: 0 15px 15px 15px;
+    box-shadow: var(--box-shadow-main);
 }
 
 .study {
@@ -126,10 +209,11 @@ section h1:not(.intro-section h1) {
 }
 
 .study-tab {
-    background-color: #2b2b2b;
+    background-color: var(--background-color-second);
     color: white;
     padding: 10px;
     border: 1px solid transparent;
+    border-radius: 15px 15px 0 0;
 }
 
 .study-tab:not(.study-tab:first-of-type) {
@@ -158,6 +242,8 @@ section h1:not(.intro-section h1) {
 .film-analysis-box {
     padding: 15px;
     background-color: #2b2b2b;
+    border-radius: var(--border-radius-regular);
+    box-shadow: var(--box-shadow-main);
 }
 
 @media (max-width: 1000px) {
@@ -177,23 +263,21 @@ section h1:not(.intro-section h1) {
 
 /*----------------- Art Analysis Sections -----------------*/
 
-#art-analysis-section {
-    max-width: 900px;
-}
+/* #art-analysis-section {
+} */
 
 #art-analysis-section h1 {
     padding-inline: 15px;
+    position: relative;
 }
 
 .art-analysis-boxes-container {
     padding: 15px;
-    max-width: 900px;
+    width: 100%;
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 19rem;
     overflow-x: auto;
     gap: 15px;
-    overscroll-behavior-inline: contain;
 }
 
 .snap-inline {
@@ -211,14 +295,15 @@ section h1:not(.intro-section h1) {
     background-color: #2b2b2b;
     display: grid;
     grid-template-rows: min-content;
-    max-width: 19rem;
-    min-height: 22rem;
+    width: 19rem;
+    border-radius: var(--border-radius-regular);
 }
 
 .art-analysis-box img {
     inline-size: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
+    border-radius: 15px 15px 0 0;
 }
 
 .art-analysis-box h2,
@@ -246,6 +331,7 @@ section h1:not(.intro-section h1) {
     aspect-ratio: 4/3;
     min-width: 100px;
     max-width: 500px;
+    border-radius: var(--border-radius-regular);
 }
 
 .img-with-caption p {
@@ -258,7 +344,7 @@ section h1:not(.intro-section h1) {
     width: 300px;
     position: relative;
     padding: 15px;
-    margin-bottom: 400px; /* photobanner is absolute */
+    margin-bottom: 350px; /* photobanner is absolute */
 }
 
 .photobanner {
@@ -269,9 +355,11 @@ section h1:not(.intro-section h1) {
 }
 
 .photobanner img {
+    border-radius: var(--border-radius-regular);
     height: 300px;
     object-fit: cover;
-    margin: 10px;
+    margin: 15px;
+    transition: all 0.2s ease-out;
 }
 
 @keyframes bannermove {
@@ -285,6 +373,11 @@ section h1:not(.intro-section h1) {
 
 /*----------------- Footer -----------------*/
 
-/* footer {
-
-} */
+footer {
+    color: #888888;
+    background-color: var(--background-color-second);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 30px;
+}
