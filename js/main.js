@@ -1,28 +1,5 @@
-// Global variables
-const titleVariations = [
-    "Beyond the Scribbles",
-    "Decoding the Rainbow",
-    "Whispers from the Crayon Box",
-    "The Art of Innocence",
-    "Inner Worlds Unveiled",
-    "The Psychology of Play",
-    "Where Colors Speak",
-    "Art as a Mirror of the Soul",
-    "Exploring the Creative Mind",
-    "Unveiling the Genius Within",
-    "Unveiling the Child Within",
-    "A Kaleidoscope of Creativity",
-    "A Glimpse into the Unfiltered Canvas",
-    "Where Imagination Takes Flight",
-    "The Artful Journey of Childhood",
-    "The Language of Crayons",
-    "Mindful Marks on Paper",
-    "Sparkling with Creative Energy",
-    "Beyond the Lines and Colors",
-    "The Unbound Potential of Imagination",
-];
-const studiesTabs = document.querySelectorAll(".study-tab");
-const studies = document.querySelectorAll(".study");
+// Initialize the app when the DOM content is loaded
+document.addEventListener("DOMContentLoaded", () => init());
 
 // Initialize the app when the DOM content is loaded
 function init() {
@@ -30,6 +7,29 @@ function init() {
 }
 
 // Type the title in a realistic style
+const titleVariations = [
+    "Beyond the Scribbles 🌈",
+    "Decoding the Rainbow 🎨",
+    "Whispers from the Crayon Box 🖍️",
+    "The Art of Innocence 🎈",
+    "Inner Worlds Unveiled 🌌",
+    "The Psychology of Play 🤹",
+    "Where Colors Speak 🎤",
+    "Art as a Mirror of the Soul 🎭",
+    "Exploring the Creative Mind 🧠",
+    "Unveiling the Genius Within 🌟",
+    "Unveiling the Child Within 👶",
+    "A Kaleidoscope of Creativity 🔮",
+    "A Glimpse into the Unfiltered Canvas 🖼️",
+    "Where Imagination Takes Flight ✈️",
+    "The Artful Journey of Childhood 🚀",
+    "The Language of Crayons 🖍️",
+    "Mindful Marks on Paper 📝",
+    "Sparkling with Creative Energy ✨",
+    "Beyond the Lines and Colors 🌈",
+    "The Unbound Potential of Imagination 🚀",
+];
+
 function typeTitle() {
     const randomIndex = Math.floor(Math.random() * titleVariations.length);
     const titleElement = document.getElementById("title");
@@ -77,8 +77,9 @@ function deleteTitle() {
     }, 30);
 }
 
-// Initialize the app when the DOM content is loaded
-document.addEventListener("DOMContentLoaded", () => init());
+// Setup study tabs functionality
+const studiesTabs = document.querySelectorAll(".study-tab");
+const studies = document.querySelectorAll(".study");
 
 studiesTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -94,6 +95,7 @@ studiesTabs.forEach((tab) => {
     });
 });
 
+// Scale photobanner images with mouse hovering
 document.querySelectorAll(".photobanner img").forEach((img) => {
     img.addEventListener("mouseover", () => {
         img.style.transform = "scale(1.1)";
@@ -106,6 +108,7 @@ document.querySelectorAll(".photobanner img").forEach((img) => {
     });
 });
 
+// Fade in sections when get inside viewport
 const fadeInElements = document.querySelectorAll(".fade-in");
 
 const callback = (entries, observer) => {
