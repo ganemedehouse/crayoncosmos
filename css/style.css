@@ -5,7 +5,7 @@
 
     --accent-purple: #9000ff;
 
-    --border-radius-regular: 15px;
+    --border-radius-regular: 20px;
 
     --box-shadow-main: 0 5px 10px 1px rgba(0, 0, 0, 0.266);
 }
@@ -15,7 +15,15 @@ html {
 }
 
 * {
+    /* font-family: "Homemade Apple", cursive; */
+    font-family: "Outfit", sans-serif;
     /* outline: 1px solid white; */
+    /* -webkit-tap-highlight-color: transparent; */
+}
+
+::selection {
+    background-color: var(--accent-purple);
+    color: white;
 }
 
 .unselectable {
@@ -38,8 +46,6 @@ html {
 /*----------------- Body -----------------*/
 
 body {
-    /* font-family: "Homemade Apple", cursive; */
-    font-family: "Outfit", sans-serif;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -53,14 +59,13 @@ body {
 }
 
 button {
-    font-family: "Outfit", sans-serif;
     font-size: 1rem;
 }
 
 /*----------------- Header -----------------*/
 
 header {
-    padding: 5px 15px;
+    padding: 5px 20px;
     display: flex;
     justify-content: space-between;
     position: fixed;
@@ -91,7 +96,6 @@ header {
     align-items: center;
     list-style-type: none;
     margin: 0;
-    padding: 0;
 }
 
 .navbar a {
@@ -101,7 +105,7 @@ header {
 
 .navbar li {
     list-style: none;
-    margin-inline: 15px;
+    margin-inline: 20px;
     transition: all 0.2s ease-in-out;
 }
 
@@ -124,7 +128,7 @@ section h1:not(#intro-section h1) {
 
 #intro-section {
     position: relative;
-    padding: 15px;
+    padding: 20px;
     height: 85vh;
     max-height: 1080px;
 }
@@ -147,11 +151,11 @@ section h1:not(#intro-section h1) {
     bottom: 0;
     right: 0;
     font-size: 30px;
-    margin: 15px;
+    margin: 20px;
 }
 
 #cursor {
-    border-right: 15px solid var(--accent-purple);
+    border-right: 20px solid var(--accent-purple);
 }
 
 @keyframes cursor-blink {
@@ -167,7 +171,7 @@ section h1:not(#intro-section h1) {
 /*----------------- Studies Sections -----------------*/
 
 #studies-section {
-    padding: 15px;
+    padding: 20px;
 }
 
 .study-window {
@@ -178,8 +182,8 @@ section h1:not(#intro-section h1) {
 
 .studies-container {
     background-color: var(--background-color-second);
-    padding: 15px;
-    border-radius: 0 15px 15px 15px;
+    padding: 20px;
+    border-radius: 0 20px 20px 20px;
     box-shadow: var(--box-shadow-main);
 }
 
@@ -213,7 +217,7 @@ section h1:not(#intro-section h1) {
     color: white;
     padding: 10px;
     border: 1px solid transparent;
-    border-radius: 15px 15px 0 0;
+    border-radius: 20px 20px 0 0;
 }
 
 .study-tab:not(.study-tab:first-of-type) {
@@ -229,18 +233,18 @@ section h1:not(#intro-section h1) {
 /*----------------- Film Analysis Sections -----------------*/
 
 #film-analysis-section {
-    padding: 15px;
+    padding: 20px;
 }
 
 .film-analysis-boxes-container {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px;
+    gap: 20px;
 }
 
 .film-analysis-box {
-    padding: 15px;
+    padding: 20px;
     background-color: #2b2b2b;
     border-radius: var(--border-radius-regular);
     box-shadow: var(--box-shadow-main);
@@ -267,22 +271,22 @@ section h1:not(#intro-section h1) {
 } */
 
 #art-analysis-section h1 {
-    padding-inline: 15px;
+    padding-inline: 20px;
     position: relative;
 }
 
 .art-analysis-boxes-container {
-    padding: 15px;
+    padding: 20px;
     width: 100%;
     display: grid;
     grid-auto-flow: column;
     overflow-x: auto;
-    gap: 15px;
+    gap: 20px;
 }
 
 .snap-inline {
     scroll-snap-type: inline mandatory;
-    scroll-padding-inline: 15px;
+    scroll-padding-inline: 20px;
 }
 
 .snap-inline * {
@@ -290,7 +294,7 @@ section h1:not(#intro-section h1) {
 }
 
 .art-analysis-box {
-    max-height: 500px;
+    max-height: 600px;
     overflow-y: scroll;
     background-color: #2b2b2b;
     display: grid;
@@ -301,41 +305,49 @@ section h1:not(#intro-section h1) {
 
 .art-analysis-box img {
     inline-size: 100%;
-    aspect-ratio: 4/3;
+    aspect-ratio: 1/1;
     object-fit: cover;
-    border-radius: 15px 15px 0 0;
+    border-radius: 20px 20px 0 0;
 }
 
 .art-analysis-box h2,
 .art-analysis-box p {
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 /*----------------- Old People's Art & Simulation Sections -----------------*/
 
 #old-peoples-art-section,
 #simulation-section {
-    padding: 15px;
+    padding: 20px;
 }
 
 .img-with-caption {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
 }
 
 .img-with-caption img {
     box-sizing: border-box;
     object-fit: cover;
-    aspect-ratio: 4/3;
+    aspect-ratio: 1/1;
+    max-width: 100%;
+    height: auto;
     min-width: 100px;
-    max-width: 500px;
     border-radius: var(--border-radius-regular);
 }
 
 .img-with-caption p {
-    max-width: 500px;
+    min-width: 100px;
+}
+
+@media (max-width: 600px) {
+    .img-with-caption {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
 }
 
 /*----------------- Brand Sections -----------------*/
@@ -343,7 +355,7 @@ section h1:not(#intro-section h1) {
 #brand-section {
     width: 300px;
     position: relative;
-    padding: 15px;
+    padding: 20px;
     margin-bottom: 350px; /* photobanner is absolute */
 }
 
@@ -351,14 +363,14 @@ section h1:not(#intro-section h1) {
     position: absolute;
     overflow: hidden;
     white-space: nowrap;
-    animation: bannermove 20s linear infinite;
+    animation: bannermove 10s linear infinite;
 }
 
 .photobanner img {
     border-radius: var(--border-radius-regular);
     height: 300px;
     object-fit: cover;
-    margin: 15px;
+    margin: 20px;
     transition: all 0.2s ease-out;
 }
 
