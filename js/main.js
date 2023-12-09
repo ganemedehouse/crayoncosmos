@@ -137,3 +137,33 @@ function toggleDropMenu() {
     const isOpen = menuList.classList.contains("open");
     isOpen ? menuList.classList.remove("open") : menuList.classList.add("open");
 }
+
+document.querySelectorAll(".navbar li").forEach((nav) => {
+    nav.addEventListener("click", toggleDropMenu);
+});
+
+// Image inspector function
+const artAnalysisImages = document.querySelectorAll(".art-analysis-box img");
+const imagesWithCaption = document.querySelectorAll(".img-with-caption img");
+const photobannerImages = document.querySelectorAll(".photobanner img");
+const fullImage = document.getElementById("full-image");
+const imageInspector = document.getElementById("image-inspector");
+const closeButton = document.getElementById("close-button");
+
+[...artAnalysisImages, ...imagesWithCaption, ...photobannerImages].forEach(
+    (image) => {
+        image.addEventListener("click", () => {
+            fullImage.src = image.src;
+            fullImage.alt = image.alt;
+            imageInspector.style.display = "flex";
+        });
+    }
+);
+
+closeButton.addEventListener("click", () => {
+    imageInspector.style.display = "none";
+});
+
+imageInspector.addEventListener("click", () => {
+    imageInspector.style.display = "none";
+});

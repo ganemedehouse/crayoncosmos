@@ -2,6 +2,25 @@
     --accent-purple: #9000ff;
 }
 
+#child-art-design {
+    position: absolute;
+    font-size: 200px;
+    font-weight: bold;
+    z-index: -1;
+    color: var(--accent-purple);
+    opacity: 0.05;
+}
+
+#child-art-analysis-design {
+    color: var(--accent-purple);
+    font-weight: bold;
+    position: absolute;
+    z-index: -1;
+    font-size: 100px;
+    transform: translateY(-50px);
+    opacity: 0.05;
+}
+
 #header-purple-circle {
     background-color: var(--accent-purple);
     width: 70vw;
@@ -87,25 +106,6 @@
     filter: blur(500px);
 }
 
-#child-art-design {
-    position: absolute;
-    font-size: 200px;
-    font-weight: bold;
-    z-index: -1;
-    color: var(--accent-purple);
-    opacity: 0.05;
-}
-
-#child-art-analysis-design {
-    color: var(--accent-purple);
-    font-weight: bold;
-    position: absolute;
-    z-index: -1;
-    font-size: 100px;
-    transform: translateY(-50px);
-    opacity: 0.05;
-}
-
 #green-design {
     position: absolute;
     rotate: 180deg;
@@ -145,8 +145,8 @@
 
 #dino-design {
     position: absolute;
-    top: 0%;
-    right: -100%;
+    top: -10%;
+    left: 50%;
     z-index: -1;
 }
 

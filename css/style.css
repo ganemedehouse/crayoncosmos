@@ -9,6 +9,7 @@
     --border-radius-regular: 20px;
 
     --box-shadow-main: 0 5px 10px 1px rgba(0, 0, 0, 0.266);
+    --box-shadow-big: 0 5px 15px 5px rgba(0, 0, 0, 0.266);
 
     --blur-regular: blur(20px);
     --blur-light: blur(3px);
@@ -148,6 +149,12 @@ header {
         background-color: transparent;
         color: white;
         border-style: none;
+        transition: all 0.2s ease-out;
+    }
+
+    .menu-button:hover {
+        transform: translateY(-4px);
+        text-shadow: 0 0 20px white;
     }
 
     .navbar-list {
@@ -337,6 +344,7 @@ header {
 
 .download-button:hover {
     scale: 1.1;
+    box-shadow: var(--box-shadow-big);
 }
 
 .download-button:focus {
@@ -469,7 +477,6 @@ header {
 /*----------------- Brand Sections -----------------*/
 
 #brand-section {
-    width: 300px;
     position: relative;
     padding: 20px;
     margin-bottom: 350px; /* photobanner is absolute */
@@ -497,6 +504,46 @@ header {
     100% {
         transform: translate(-50%, 0);
     }
+}
+
+/*----------------- Image inspector -----------------*/
+
+#image-inspector {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: var(--blur-regular);
+    z-index: 1000;
+}
+
+#full-image {
+    width: 100vw;
+    height: auto;
+    object-fit: contain;
+}
+
+#close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 100px;
+    font-size: 28px;
+    padding-inline: 8px;
+    border: 5px solid white;
+    color: var(--background-color-main);
+    box-shadow: var(--box-shadow-main);
+    background-color: white;
+    transition: all 0.2s ease-out;
+}
+
+#close-button:hover {
+    scale: 1.1;
+    box-shadow: var(--box-shadow-big);
 }
 
 /*----------------- Footer -----------------*/
