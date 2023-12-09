@@ -130,3 +130,10 @@ const callback = (entries, observer) => {
 const observer = new IntersectionObserver(callback);
 
 fadeInElements.forEach((element) => observer.observe(element));
+
+// Toggle drop menu for mobile
+function toggleDropMenu() {
+    const menuList = document.querySelector(".navbar-list");
+    const isOpen = menuList.classList.contains("open");
+    isOpen ? menuList.classList.remove("open") : menuList.classList.add("open");
+}

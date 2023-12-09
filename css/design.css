@@ -8,50 +8,8 @@
     height: 30px;
     position: absolute;
     border-radius: 100px;
-    z-index: -1;
+    z-index: -2;
     filter: blur(100px);
-}
-
-#simulation-orange-circle {
-    background-color: orangered;
-    width: 500px;
-    height: 500px;
-    position: absolute;
-    border-radius: 100px;
-    z-index: -1;
-    filter: blur(500px);
-}
-
-#brand-turquoise-circle {
-    background-color: turquoise;
-    width: 500px;
-    height: 500px;
-    position: absolute;
-    left: 150%;
-    border-radius: 100px;
-    z-index: -1;
-    filter: blur(500px);
-}
-
-#old-peoples-red-circle {
-    background-color: red;
-    width: 500px;
-    height: 500px;
-    position: absolute;
-    border-radius: 100px;
-    z-index: -1;
-    filter: blur(500px);
-}
-
-#film-purple-circle {
-    background-color: var(--accent-purple);
-    width: 500px;
-    height: 500px;
-    position: absolute;
-    right: 0%;
-    border-radius: 100px;
-    z-index: -1;
-    filter: blur(500px);
 }
 
 #author-green-circle {
@@ -62,8 +20,71 @@
     top: -100%;
     right: 0%;
     border-radius: 100px;
-    z-index: -1;
+    z-index: -2;
     filter: blur(200px);
+}
+
+#studies-pink-circle {
+    background-color: palevioletred;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    border-radius: 100px;
+    z-index: -2;
+    filter: blur(500px);
+}
+
+#film-orangered-circle {
+    background-color: orangered;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    right: 0%;
+    border-radius: 100px;
+    z-index: -2;
+    filter: blur(500px);
+}
+
+#art-analysis-cyan-circle {
+    background-color: cyan;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    right: 0%;
+    border-radius: 100px;
+    z-index: -2;
+    filter: blur(500px);
+}
+
+#old-peoples-red-circle {
+    background-color: red;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    border-radius: 100px;
+    z-index: -2;
+    filter: blur(500px);
+}
+
+#brand-turquoise-circle {
+    background-color: turquoise;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 100%;
+    border-radius: 100px;
+    z-index: -2;
+    filter: blur(500px);
+}
+
+#simulation-orange-circle {
+    background-color: orangered;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    border-radius: 100px;
+    z-index: -2;
+    filter: blur(500px);
 }
 
 #child-art-design {

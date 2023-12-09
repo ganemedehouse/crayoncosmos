@@ -57,6 +57,7 @@
             />
             <nav class="navbar">
                 <ul class="navbar-list">
+                    <li><a href="#intro-section">Intro</a></li>
                     <li><a href="#studies-section">Studies</a></li>
                     <li><a href="#film-analysis-section">Film Analysis</a></li>
                     <li><a href="#art-analysis-section">Art Analysis</a></li>
@@ -67,9 +68,11 @@
                     <li><a href="#simulation-section">Simulation</a></li>
                 </ul>
             </nav>
+            <button class="menu-button" onclick="toggleDropMenu()">
+                <i class="fa fa-bars"></i>
+            </button>
             <div id="header-purple-circle"></div>
         </header>
-
         <!-- header ends -->
 
         <!-- main starts -->
@@ -114,7 +117,10 @@
                         id="pink-design"
                         class="unselectable"
                     />
-                    <h2>📚 Studies in Child Art</h2>
+                    <h2>
+                        📚 Studies in Child Art
+                        <div id="studies-pink-circle"></div>
+                    </h2>
                     <div class="study-window">
                         <div>
                             <button
@@ -361,7 +367,7 @@
                     />
                     <h2>
                         🎬 Film Materials Analysis
-                        <div id="film-purple-circle"></div>
+                        <div id="film-orangered-circle"></div>
                     </h2>
                     <div class="film-analysis-boxes-container">
                         <article class="film-analysis-box">
@@ -495,6 +501,7 @@
                             Child Art Analysis <br />
                             Child Art Analysis
                         </div>
+                        <div id="art-analysis-cyan-circle"></div>
                     </h2>
                     <div class="art-analysis-boxes-container snap-inline">
                         <div class="art-analysis-box">

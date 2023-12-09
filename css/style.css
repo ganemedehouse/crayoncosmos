@@ -9,6 +9,9 @@
     --border-radius-regular: 20px;
 
     --box-shadow-main: 0 5px 10px 1px rgba(0, 0, 0, 0.266);
+
+    --blur-regular: blur(20px);
+    --blur-light: blur(3px);
 }
 
 html {
@@ -18,9 +21,7 @@ html {
 }
 
 * {
-    /* font-family: "Homemade Apple", cursive; */
     font-family: "Outfit", sans-serif;
-    /* outline: 1px solid white; */
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -82,7 +83,7 @@ button {
 /*----------------- Header -----------------*/
 
 header {
-    padding: 5px 20px;
+    padding: 5px 0px;
     display: flex;
     justify-content: space-between;
     position: fixed;
@@ -94,17 +95,17 @@ header {
         var(--background-color-main),
         transparent
     );
-    backdrop-filter: blur(3px);
+    backdrop-filter: var(--blur-light);
 }
 
 .logo {
     object-fit: scale-down;
+    margin-left: 5px;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-around;
-    position: relative;
+    padding-right: 20px;
 }
 
 .navbar-list {
@@ -122,12 +123,73 @@ header {
 
 .navbar li {
     list-style: none;
-    margin-inline: 20px;
     transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
 }
 
 .navbar li:hover {
     transform: translateY(-4px);
+    text-shadow: 0 0 20px white;
+}
+
+.menu-button {
+    display: none;
+}
+
+/* Dropmenu instead of navbar for mobile */
+@media only screen and (max-width: 768px) {
+    .menu-button {
+        display: block;
+        font-size: 24px;
+        padding-inline: 20px;
+        background-color: transparent;
+        color: white;
+        border-style: none;
+    }
+
+    .navbar-list {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease-in-out;
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-inline: 20px;
+        padding: 10px 0;
+        background-color: var(--background-color-main);
+        box-shadow: var(--box-shadow-main);
+        border-radius: var(--border-radius-regular);
+        animation: slideup 0.2s ease-out;
+    }
+
+    .navbar-list.open {
+        opacity: 1;
+        visibility: visible;
+        animation: slidedown 0.2s ease-out;
+    }
+
+    @keyframes slideup {
+        from {
+            transform: scaleY(1);
+        }
+        to {
+            transform: scaleY(0);
+        }
+    }
+
+    @keyframes slidedown {
+        from {
+            transform: scaleY(0);
+        }
+        to {
+            transform: scaleY(1);
+        }
+    }
 }
 
 /*----------------- Intro Section -----------------*/
@@ -155,7 +217,7 @@ header {
 
 #author {
     position: absolute;
-    bottom: 0;
+    bottom: 5%;
     right: 0;
     font-size: 30px;
     margin: 20px;
@@ -166,7 +228,7 @@ header {
     color: white;
     font-size: 18px;
     position: absolute;
-    top: 50px;
+    bottom: 0;
     font-weight: normal;
 }
 
@@ -209,7 +271,7 @@ header {
 
 .studies-container {
     background-color: var(--gray-transparent);
-    backdrop-filter: blur(20px);
+    backdrop-filter: var(--blur-regular);
     padding: 20px;
     border-radius: 0 20px 20px 20px;
     box-shadow: var(--box-shadow-main);
@@ -251,7 +313,7 @@ header {
 
 .study-tab.pressed {
     background-color: var(--gray-transparent);
-    backdrop-filter: blur(20px);
+    backdrop-filter: var(--blur-regular);
 }
 
 .study a {
@@ -303,7 +365,7 @@ header {
 .film-analysis-box {
     padding: 20px;
     background-color: var(--gray-transparent);
-    backdrop-filter: blur(20px);
+    backdrop-filter: var(--blur-regular);
     border-radius: var(--border-radius-regular);
     box-shadow: var(--box-shadow-main);
 }
@@ -355,7 +417,7 @@ header {
     max-height: 600px;
     overflow-y: scroll;
     background-color: var(--gray-transparent);
-    backdrop-filter: blur(20px);
+    backdrop-filter: var(--blur-regular);
     display: grid;
     grid-template-rows: min-content;
     width: 19rem;
@@ -443,7 +505,7 @@ footer {
     width: 100%;
     color: #a2a0a0;
     background-color: var(--gray-transparent);
-    backdrop-filter: blur(20px);
+    backdrop-filter: var(--blur-regular);
     display: flex;
     justify-content: center;
     align-items: center;
