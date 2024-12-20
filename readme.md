@@ -21,7 +21,3 @@ The site is divided into several sections, each focusing on a different aspect o
 ## License
 
 This website is licensed under CC0, which means that you are free to copy, modify, distribute, and perform the work, even for commercial purposes, all without asking permission.
-
-## Contact
-
-For any inquiries or further information, please visit the website [Crayon Cosmos](https://ganymedehouse.github.io/crayoncosmos/).
